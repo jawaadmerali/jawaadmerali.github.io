@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Order Recieved</title>
+    <!-- <link rel="stylesheet" href="recieved_styles.css" /> -->
+    <link href="received_styles.css" rel="stylesheet" type="text/css" />
+  </head>
+
+  <body>
+    <div class="nav">
+      <a href="index.html">HOME</a>
+
+      <a href="index.html">MENU</a>
+
+      <a href="index.html">CONTACT</a>
+
+      <a href="special_events.html">EVENTS</a>
+
+      <div class="dropdown">
+        <a href="order.html" class="cta">ORDER</a>
+
+        <div class="dropdownContent">
+          <a href="order.html#original">Appetizers</a>
+          <a href="order.html#big">Classics</a>
+          <a href="order.html#somethingDifferent">Pizzas</a>
+          <a href="order.html#other">Light</a>
+        </div>
+      </div>
+    </div>
+
+    <section class="landing" id="landing">
+      <div class="hero">
+        <!-- <span class="accent"> Grill</span> -->
+        <h1>Order <span class="accent">Confirmation</span>.</h1>
+
+        <!--  -->
+
+        <div class="container">
+          <a href="order.html">
+            <button class="cta">NEW ORDER</button>
+          </a>
+
+          <!-- <a onclick="document.getElementById('menu').scrollIntoView();">
+          <button>VIEW MENU</button>
+        </a> -->
+
+          <!-- <a href="order.html">
+            <button class="cta">VIEW MENU</button>
+          </a> -->
+        </div>
+      </div>
+      <!-- <img class="downlink" src="https://i.pinimg.com/1200x/dc/39/81/dc398179aadbcce3c6eda958a942a274.jpg" alt="heart"> -->
+    </section>
+
+    <section class="menu">
+      <div class="payme">
+        <h3>Pay here!</h3>
+        <div id="paypal-button-container"></div>
+      </div>
+      <script
+        src="https://www.paypal.com/sdk/js?client-id=sb&currency=USD"
+        data-sdk-integration-source="button-factory"
+      ></script>
+      <script>
+        paypal
+          .Buttons({
+            style: {
+              shape: "rect",
+              color: "gold",
+              layout: "vertical",
+              label: "paypal",
+            },
+            createOrder: function (data, actions) {
+              return actions.order.create({
+                purchase_units: [
+                  {
+                    amount: {
+                      value: "1",
+                    },
+                  },
+                ],
+              });
+            },
+            onApprove: function (data, actions) {
+              return actions.order.capture().then(function (details) {
+                alert(
+                  "Transaction completed by " +
+                    details.payer.name.given_name +
+                    "!"
+                );
+              });
+            },
+          })
+          .render("#paypal-button-container");
+      </script>
+
+      <h2>There's some more stuff waiting in store...</h2>
+      <div class="pizzas">
+        <div class="pizza">
+          <p>
+            Be sure to follow us, and keep up with new projects, albums, and
+            merch drops. To our fans, we appreciate y'all a lot. Rock on, and
+            thanks for your purchase!
+          </p>
+          <!-- Secret Garden Fest -->
+          <p class="ty">Thank You!</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="footer">
+      <div class="column title">
+        <h2>Stage <span class="accent">Fright</span></h2>
+
+        <p>
+          Hendrickson High School Pflugerville Chapter by Advait Mannepalli, Jawaad Merali, Saamiya
+          Merali, Giovanni Haddad.
+        </p>
+        <p>
+          Theme is Stage Fright Band. Hendrickson High School, Pflugerville,
+          Texas (2024-2025)
+        </p>
+
+        <div class="socialMedia">
+          <ion-icon name="logo-twitter"></ion-icon>
+
+          <ion-icon name="logo-facebook"></ion-icon>
+
+          <ion-icon name="logo-youtube"></ion-icon>
+
+          <ion-icon name="logo-instagram"></ion-icon>
+        </div>
+      </div>
+
+      <div class="column home">
+        <h3>HOME</h3>
+
+        <a href="index.html#about">ABOUT US</a>
+
+        <a href="index.html#about">Why us</a>
+
+        <a href="index.html#contact">Contact us</a>
+      </div>
+
+      <div class="column order">
+        <h3>MERCH</h3>
+
+        <a href="order.html#original">Shirts</a>
+
+        <a href="order.html#big">Sweatshirts</a>
+
+        <a href="order.html#somethingDifferent">Chains</a>
+
+        <a href="order.html#other">Posters</a>
+      </div>
+
+      <div class="column businessHours">
+        <h3>UPCOMING TOUR AREAS</h3>
+
+        <p>Austin, Texas</p>
+
+        <p>Los Angeles, California</p>
+
+        <p>Sedona, Arizona</p>
+      </div>
+
+      <div class="column info">
+        <h3 class="phoneNumber">PHONE NUMBER</h3>
+
+        <p>+1 512-555-7890</p>
+      </div>
+    </section>
+  </body>
+</html>

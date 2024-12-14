@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="reserve.css" rel="stylesheet" type="text/css">
+  <title>Reservations</title>
+</head>
+
+<body>
+  <div class="nav">
+    <a href="index.html">HOME</a>
+
+    <a href="index.html">MENU</a>
+
+    <a href="special_events.html">EVENTS</a>
+
+    <a href="order.html">CONTACT</a>
+
+    <div class="dropdown">
+      <a href="order.html" class="cta">ORDER</a>
+
+    </div>
+  </div>
+
+
+  </div>
+
+
+
+  <section class="landing" id="landing">
+    <div class="hero">
+      <h1>RESER<span class="accent">VATIONS</span></h1>
+    </div>
+
+    <div onclick="document.getElementById('menu').scrollIntoView();" class="downLink">
+      <p>Tickets</p>
+    </div>
+  </section>
+
+
+
+
+  <section class="reserve">
+    <h1>Congratulations! A seat is now being <span class="accent">reserved</span> for you</h1>
+    <h1 class="rando">Your Seat number is:</h1>
+  </section>
+
+
+
+
+  <script>
+    let element = document.querySelector('.rando');
+
+    let rando = Math.floor(Math.random() * 10) + 1;
+    let randostr = rando.toString();
+
+
+    // Get HTML content
+    // returns "<p>Hello world!</p>"
+    let html = rando.innerHTML;
+
+    // Add HTML to the end of an element's existing content
+    element.innerHTML += ' ' + randostr;
+  </script>
+
+
+
+
+
+
+<section class="footer">
+  <div class="column title">
+    <h2>Stage <span class="accent">Fright</span></h2>
+
+    <p>
+      Hendrickson High School Pflugerville Chapter by Advait Mannepalli, Jawaad Merali, Saamiya
+      Merali, Giovanni Haddad.
+    </p>
+    <p>
+      Theme is Stage Fright Band. Hendrickson High School, Pflugerville,
+      Texas (2024-2025)
+    </p>
+
+    <div class="socialMedia">
+      <ion-icon name="logo-twitter"></ion-icon>
+
+      <ion-icon name="logo-facebook"></ion-icon>
+
+      <ion-icon name="logo-youtube"></ion-icon>
+
+      <ion-icon name="logo-instagram"></ion-icon>
+    </div>
+  </div>
+
+  <div class="column home">
+    <h3>HOME</h3>
+
+    <a href="index.html#about">ABOUT US</a>
+
+    <a href="index.html#about">Why us</a>
+
+    <a href="index.html#contact">Contact us</a>
+  </div>
+
+  <div class="column order">
+    <h3>MERCH</h3>
+
+    <a href="order.html#original">Shirts</a>
+
+    <a href="order.html#big">Sweatshirts</a>
+
+    <a href="order.html#somethingDifferent">Chains</a>
+
+    <a href="order.html#other">Posters</a>
+  </div>
+
+  <div class="column businessHours">
+    <h3>UPCOMING TOUR AREAS</h3>
+
+    <p>Austin, Texas</p>
+
+    <p>Los Angeles, California</p>
+
+    <p>Sedona, Arizona</p>
+  </div>
+
+  <div class="column info">
+    <h3 class="phoneNumber">PHONE NUMBER</h3>
+
+    <p>+1 512-555-7890</p>
+  </div>
+</section>
+
+
+</body>
+
+</html>
